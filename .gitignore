@@ -1,0 +1,8 @@
+*.iml
+app/google-services.json
+.idea
+.gradle
+.DS_Store
+/build
+/captures
+.externalNativeBuild

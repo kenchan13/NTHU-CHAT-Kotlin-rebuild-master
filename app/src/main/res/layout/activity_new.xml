@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewActivity">
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="0dp"
+        android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/eventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:background="@null"
+                android:hint="輸入標題"
+                android:padding="18dip"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+        </TableRow>
+
+        <View android:layout_width="fill_parent" android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="224dp"
+                android:layout_weight="2"
+                android:gravity="start"
+                android:hint="開始日期"
+                android:padding="20dip"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/startTime"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:padding="20dip"
+                android:text=""
+                android:hint="時間"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:gravity="start"
+                android:padding="20dip"
+                android:text=""
+                android:hint="結束日期"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/endTime"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:padding="20dip"
+                android:text=""
+                android:hint="時間"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+
+        </TableRow>
+
+        <View android:layout_width="fill_parent" android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:padding="18dip"
+                android:text=""
+                android:hint="活動地點"
+                android:textColor="#000"
+                android:inputType="textMultiLine"
+                android:background="@null"
+                android:textSize="18sp" />
+
+        </TableRow>
+
+        <View android:layout_width="fill_parent" android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:padding="18dip"
+                android:text=""
+                android:hint="詳細資料"
+                android:textColor="#000"
+                android:inputType="textMultiLine"
+                android:background="@null"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <View android:layout_width="fill_parent" android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Spinner
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2" />
+
+        </TableRow>
+
+
+        <View android:layout_width="fill_parent" android:layout_height="1px"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:paddingRight="0dp">
+
+            <Button
+                android:id="@+id/buttonSend"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text="建立" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</RelativeLayout>
