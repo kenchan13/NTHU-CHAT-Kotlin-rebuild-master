@@ -8,6 +8,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
 
 //import com.google.firebase.codelab.nthuchat
 
@@ -31,6 +34,11 @@ class DiscoverFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+    // Firebase instance variables
+    private var mFirebaseUser: FirebaseUser? = null
+    private lateinit var mFirebaseAuth: FirebaseAuth
+    private lateinit var mFirebaseDatabaseReference: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -42,6 +50,16 @@ class DiscoverFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+
+        // Initialize Firebase Auth
+        mFirebaseAuth = FirebaseAuth.getInstance()
+        mFirebaseUser = mFirebaseAuth.currentUser
+
+
+        Log.d("currentUser", mFirebaseUser?.displayName.toString())
+
+
+
         return inflater.inflate(R.layout.fragment_discover, container, false)
     }
 
