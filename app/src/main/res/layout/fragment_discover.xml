@@ -1,14 +1,23 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.google.firebase.codelab.nthuchat.DiscoverFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
 
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.google.firebase.codelab.nthuchat.DiscoverFragment">
 
+        <!-- TODO: Update blank fragment layout -->
+
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
@@ -17,4 +26,4 @@
         android:layout_marginBottom="0dp"
         app:itemBackground="@color/white"
         app:menu="@menu/bottom_navigation_map" />
-</FrameLayout>
+</RelativeLayout>
