@@ -56,6 +56,7 @@ class DiscoverFragment : Fragment() {
         mFirebaseUser = mFirebaseAuth.currentUser
 
 
+
         Log.d("currentUser", mFirebaseUser?.displayName.toString())
 
 

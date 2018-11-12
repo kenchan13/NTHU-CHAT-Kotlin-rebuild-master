@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+    android:id="@+id/inspiration"
+    android:enabled="true"
+    android:icon="@drawable/inspiration"
+    android:title="啓發"
+    app:showAsAction="ifRoom|withText" />
+
+<item
+    android:id="@+id/study"
+    android:enabled="true"
+    android:icon="@drawable/study"
+    android:title="學習"
+    app:showAsAction="ifRoom|withText" />
+
+<item
+    android:id="@+id/entertainment"
+    android:enabled="true"
+    android:icon="@drawable/entertainment"
+    android:title="娛樂"
+    app:showAsAction="ifRoom|withText" />
+
+<item
+    android:id="@+id/social"
+    android:enabled="true"
+    android:icon="@drawable/social"
+    android:title="社交"
+    app:showAsAction="ifRoom|withText" />
+
+<item
+    android:id="@+id/friends"
+    android:enabled="true"
+    android:icon="@drawable/friends"
+    android:title="朋友"
+    app:showAsAction="ifRoom|withText" />
+
+</menu>
