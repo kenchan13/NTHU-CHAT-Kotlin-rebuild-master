@@ -1,16 +1,22 @@
 package com.google.firebase.codelab.nthuchat
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
+import android.Manifest
+import android.support.v4.app.ActivityCompat
 
 //import com.google.firebase.codelab.nthuchat
 
@@ -28,16 +34,20 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class DiscoverFragment : Fragment() {
+class DiscoverFragment : Fragment(), OnMapReadyCallback {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
     // Firebase instance variables
-    private var mFirebaseUser: FirebaseUser? = null
-    private lateinit var mFirebaseAuth: FirebaseAuth
-    private lateinit var mFirebaseDatabaseReference: DatabaseReference
+//    private var mFirebaseUser: FirebaseUser? = null
+//    private lateinit var mFirebaseAuth: FirebaseAuth
+//    private lateinit var mFirebaseDatabaseReference: DatabaseReference
+
+    // Get Permission for Google Map
+    private val LOCATION_REQUEST_CODE = 101
+    private var mMap: GoogleMap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,17 +57,41 @@ class DiscoverFragment : Fragment() {
         }
     }
 
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+
+        if (mMap != null) {
+            val permission = getActivity()!!.checkSelfPermission(
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+
+            if (permission == PackageManager.PERMISSION_GRANTED) {
+                mMap?.isMyLocationEnabled = true
+            } else {
+                requestPermission(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        LOCATION_REQUEST_CODE)
+            }
+        }
+    }
+
+    private fun requestPermission(permissionType: String,
+                                  requestCode: Int) {
+
+        requestPermissions(arrayOf(permissionType), requestCode)
+    }
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
         // Initialize Firebase Auth
-        mFirebaseAuth = FirebaseAuth.getInstance()
-        mFirebaseUser = mFirebaseAuth.currentUser
+//        mFirebaseAuth = FirebaseAuth.getInstance()
+//        mFirebaseUser = mFirebaseAuth.currentUser
 
 
 
-        Log.d("currentUser", mFirebaseUser?.displayName.toString())
+//        Log.d("currentUser", mFirebaseUser?.displayName.toString())
 
 
 
